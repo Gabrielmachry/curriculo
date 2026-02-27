@@ -145,3 +145,43 @@ button {
         width: 100%;
     }
 }
+/* ========================= */
+/* MODO IMPRESSÃO PROFISSIONAL */
+/* ========================= */
+
+@media print {
+
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .sidebar {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .main {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000 !important;
+    }
+
+    img {
+        filter: grayscale(100%);
+    }
+
+    .container {
+        width: 100%;
+        box-shadow: none;
+    }
+
+}
