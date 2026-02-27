@@ -1,37 +1,35 @@
 function baixarPDF() {
 
-    const elemento = document.querySelector(".container");
+    const elemento = document.body;
 
-    // Salva cores atuais
+    const botoes = document.querySelectorAll(".no-print");
+
+    // Esconde botões
+    botoes.forEach(btn => btn.style.display = "none");
+
+    // Salva fundo original
     const originalBg = document.body.style.background;
     const originalColor = document.body.style.color;
 
-    // Aplica modo impressão
+    // Aplica modo branco
     document.body.style.background = "#ffffff";
     document.body.style.color = "#000000";
 
-    elemento.style.background = "#ffffff";
-    elemento.style.color = "#000000";
-
-    const botoes = document.querySelector(".no-print");
-    if (botoes) botoes.style.display = "none";
-
     const opt = {
-        margin:       0.3,
-        filename:     'Gabriel_Machry_Curriculo.pdf',
-        image:        { type: 'jpeg', quality: 1 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        margin: 0.3,
+        filename: 'Gabriel_Machry_Curriculo.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
     html2pdf().set(opt).from(elemento).save().then(() => {
 
-        // Restaura visual original
+        // Restaura visual
         document.body.style.background = originalBg;
         document.body.style.color = originalColor;
-        elemento.style.background = "";
-        elemento.style.color = "";
-        if (botoes) botoes.style.display = "flex";
+
+        botoes.forEach(btn => btn.style.display = "inline-block");
 
     });
 }
