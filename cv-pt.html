@@ -5,8 +5,9 @@
 <title>Currículo - Gabriel do Prado Machry</title>
 
 <link rel="stylesheet" href="style.css">
-<script src="html2pdf.bundle.min.js"></script>
-<script src="script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js" defer></script>>
 </head>
 
 <body>
@@ -225,24 +226,9 @@ Tecnólogo em Serviços Jurídicos Cartorários e Notariais (EAD) – Concluído
 Julho de 2019 – Julho de 2021
 
 </div>
-<script src="html2pdf.bundle.min.js"></script>
-
-<script>
-function gerarPDF() {
-    const element = document.querySelector(".page");
-
-    const opt = {
-        margin: 0,
-        filename: 'Gabriel_Machry_CV.pdf',
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
-    html2pdf().set(opt).from(element).save();
-}
-</script>
 </div>
 </div>
 </body>
 </html>
+
 
